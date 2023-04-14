@@ -1,0 +1,24 @@
+{
+  "controls": {
+    "email": {
+      "label": "Email"
+    },
+    "password": {
+      "label": "Password",
+      "show": "Show password",
+      "forgot": "Forgot password?"
+    },
+    "firstname": {
+      "label": "Firstname"
+    },
+    "lastname": {
+      "label": "Lastname"
+    },
+    "googleSignin": "Sign in with Google",
+    "googleSignup": "Sign up with Google"
+  },
+  "notification": {
+    "notFound": "{{field}} not found",
+    "emailExist": "Email already exist"
+  }
+}

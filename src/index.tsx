@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { App } from '@components/App';
+import Root from '@pages/Root';
 
-import '@styles/main.scss';
+import '@src/i18n';
+import '@src/firebase.config';
 
-const app = <App />;
-
-createRoot(document.getElementById('app')).render(app);
+createRoot(document.getElementById('app')).render(
+  <Suspense fallback="loading">
+    <React.StrictMode>
+      <Root />
+    </React.StrictMode>
+  </Suspense>
+);

@@ -17,11 +17,11 @@ module.exports = [
   {
     // CSS Loader
     test: /\.css$/,
-    use: [ 
-      { loader: inDev() ? 'style-loader' : MiniCssExtractPlugin.loader }, 
+    use: [
+      { loader: inDev() ? 'style-loader' : MiniCssExtractPlugin.loader },
       { loader: 'css-loader' },
-      { loader: 'postcss-loader' }
-    ]
+      { loader: 'postcss-loader' },
+    ],
   },
   {
     // SCSS (SASS) Loader
@@ -45,5 +45,5 @@ module.exports = [
     // SVG loader
     test: /\.svg$/,
     use: ['@svgr/webpack', 'url-loader'],
-  }
-]
+  },
+];
