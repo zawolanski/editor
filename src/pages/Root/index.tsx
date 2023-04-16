@@ -19,6 +19,7 @@ const Root = () => (
         <Route path="/documents" element={<AuthRoute />}>
           <Route path="/documents" element={<Documents />} />
         </Route>
+        <Route path="*" element={<h2>Not found</h2>} />
       </Routes>
     </Router>
   </MainTemplate>

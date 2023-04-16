@@ -9,6 +9,7 @@ export const useAuth = () => {
   useEffect(() => {
     if (isMounted) {
       const auth = getAuth();
+      console.log('authauth', auth);
       onAuthStateChanged(auth, (user) => {
         if (user) setLoggedIn(true);
         setCheckingStatus(false);

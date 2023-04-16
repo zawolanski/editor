@@ -16,4 +16,4 @@ function createWebpackAliases(aliases) {
 module.exports = {
   inDev,
   createWebpackAliases,
-}
+};
