@@ -1,17 +1,25 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { mergeRegister } from '@lexical/utils';
-import { $getSelection, $isRangeSelection, FORMAT_TEXT_COMMAND, SELECTION_CHANGE_COMMAND } from 'lexical';
+import { AppBar, Box, Toolbar as MUIToolbar } from '@mui/material';
+import { $getSelection, $isRangeSelection, SELECTION_CHANGE_COMMAND, TextFormatType } from 'lexical';
 import { useCallback, useEffect, useState } from 'react';
+
+import { Basic } from './Basic';
 
 export const Toolbar = () => {
   const [editor] = useLexicalComposerContext();
-  const [isBold, setIsBold] = useState(false);
+
+  const [selectedFormats, setSelectedFormats] = useState<TextFormatType[]>([]);
 
   const updateToolbar = useCallback(() => {
     const selection = $getSelection();
-    console.log('selection?', selection);
     if ($isRangeSelection(selection)) {
-      setIsBold(selection.hasFormat('bold'));
+      const selected: TextFormatType[] = [];
+      if (selection.hasFormat('bold')) selected.push('bold');
+      if (selection.hasFormat('italic')) selected.push('italic');
+      if (selection.hasFormat('underline')) selected.push('underline');
+      if (selection.hasFormat('strikethrough')) selected.push('strikethrough');
+      setSelectedFormats(selected);
     }
   }, []);
 
@@ -35,15 +43,14 @@ export const Toolbar = () => {
   }, [editor, updateToolbar]);
 
   return (
-    <button
-      type="button"
-      onClick={() => {
-        editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold');
-      }}
-      className={`toolbar-item spaced ${isBold ? 'active' : ''}`}
-      aria-label="Format Bold"
-    >
-      B
-    </button>
+    <Box>
+      <AppBar position="sticky" color="default" sx={{ marginBottom: '1.5rem' }}>
+        <MUIToolbar>
+          <Box display="flex" justifyContent="center" flexGrow={1}>
+            <Basic selectedFormats={selectedFormats} />
+          </Box>
+        </MUIToolbar>
+      </AppBar>
+    </Box>
   );
 };

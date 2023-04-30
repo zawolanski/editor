@@ -13,7 +13,7 @@ import styles from '../../styles/editor.module.scss';
 
 export const Editor = () => {
   const initialConfig = {
-    namespace: 'MyEditor',
+    namespace: 'mydocs',
     onError,
     theme: THEME,
   };

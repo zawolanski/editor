@@ -9,10 +9,26 @@
 }
 
 .editor-paragraph {
-  margin: 0 0 15px 0;
+  margin: 0 0 0.5rem 0;
   position: relative;
 }
 
 .editor-text-bold {
   font-weight: bold;
+}
+
+.editor-text-italic {
+  font-style: italic;
+}
+
+.editor-text-underline {
+  text-decoration: underline;
+}
+
+.editor-text-strikethrough {
+  text-decoration: line-through;
+}
+
+.editor-text-underlineStrikethrough {
+  text-decoration: underline line-through;
 }
