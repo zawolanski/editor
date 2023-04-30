@@ -1,0 +1,1 @@
+export { DocumentBar } from './DocumentBar';

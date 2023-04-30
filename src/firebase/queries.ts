@@ -1,6 +1,6 @@
 import { collection, query, where } from 'firebase/firestore';
 
-import { db } from '@src/firebase.config';
+import { db } from '@src/firebase';
 
 export const getOwnerDocQuery = (uid: string) => query(collection(db, 'documents'), where('owner', '==', uid));
 export const getInvitedDocQuery = (uid: string) =>

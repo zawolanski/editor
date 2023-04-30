@@ -7,7 +7,7 @@ module.exports = createWebpackAliases({
   '@assets': 'src/assets',
   '@config': 'src/config',
   '@pages': 'src/pages',
-  '@helpers': 'src/helpers',
+  '@utils': 'src/utils',
   '@hooks': 'src/hooks',
   '@templates': 'src/templates',
   '@locales': 'src/locales',

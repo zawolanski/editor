@@ -1,0 +1,1 @@
+export { DocumentBarsLabel } from './DocumentBarsLabel';

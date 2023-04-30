@@ -12,17 +12,22 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
     "paths": {
       "*": ["node_modules/*"],
       "@src/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
-      "@config/*": ["./src/config/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@helpers/*": ["./src/helpers/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@templates/*": ["./src/templates/*"],
+      "@components": ["./src/components/index.ts"],
+      "@pages": ["./src/pages/index.ts"],
+      "@config": ["./src/config/index.ts"],
+      "@hooks": ["./src/hooks/index.ts"],
+      "@utils": ["./src/utils/index.ts"],
+      "@templates": ["./src/templates/index.ts"],
       "@locales/*": ["./src/locales/*"]
     }
   },
