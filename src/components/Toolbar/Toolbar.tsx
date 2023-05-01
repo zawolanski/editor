@@ -1,10 +1,10 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { mergeRegister } from '@lexical/utils';
-import { AppBar, Box, Toolbar as MUIToolbar } from '@mui/material';
+import { AppBar, Box, Toolbar as MUIToolbar, Paper } from '@mui/material';
 import { $getSelection, $isRangeSelection, SELECTION_CHANGE_COMMAND, TextFormatType } from 'lexical';
 import { useCallback, useEffect, useState } from 'react';
 
-import { Basic } from './Basic';
+import { TextFormattingTools } from './TextFormatting';
 
 export const Toolbar = () => {
   const [editor] = useLexicalComposerContext();
@@ -44,10 +44,12 @@ export const Toolbar = () => {
 
   return (
     <Box>
-      <AppBar position="sticky" color="default" sx={{ marginBottom: '1.5rem' }}>
+      <AppBar position="fixed" color="default" sx={{ marginBottom: '1.5rem' }}>
         <MUIToolbar>
           <Box display="flex" justifyContent="center" flexGrow={1}>
-            <Basic selectedFormats={selectedFormats} />
+            <Paper elevation={0}>
+              <TextFormattingTools selectedFormats={selectedFormats} />
+            </Paper>
           </Box>
         </MUIToolbar>
       </AppBar>

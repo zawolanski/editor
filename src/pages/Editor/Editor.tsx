@@ -24,7 +24,7 @@ export const Editor = () => {
       <Container>
         <RichTextPlugin
           contentEditable={<ContentEditable className={styles.editor} />}
-          placeholder={<div>Enter some text...</div>}
+          placeholder={null}
           ErrorBoundary={LexicalErrorBoundary}
         />
         <HistoryPlugin />
