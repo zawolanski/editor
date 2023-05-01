@@ -1,5 +1,8 @@
 {
   "textFormatting": {
     "title": "text formatting"
+  },
+  "subSuperScript": {
+    "title": "sub or super script formatting"
   }
 }

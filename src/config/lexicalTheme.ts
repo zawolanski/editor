@@ -11,5 +11,7 @@ export const THEME: EditorThemeClasses = {
     underline: 'editor-text-underline',
     strikethrough: 'editor-text-strikethrough',
     underlineStrikethrough: 'editor-text-underlineStrikethrough',
+    subscript: 'editor-text-subscript',
+    superscript: 'editor-text-superscript',
   },
 };
